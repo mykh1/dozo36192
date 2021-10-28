@@ -1,7 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 .top-page-header {
   width: 100vw;
   padding: 2vh 15vw;
-  /* display: flex; */
+  display: flex; 
   flex-direction: column;
 }
 
@@ -36,8 +40,7 @@
 
 .nav {
   font-size: 18px;
-  /*display: flex; */
-  display: inline-block;
+  display: flex;
 
   justify-content: space-between;
   flex-wrap: wrap;
@@ -47,12 +50,11 @@
 
 
 .lists-left {
-  /* display: flex; */
-  display: inline-block;
-
+  display: flex;
   min-width: 200px;
 
 }
+
 
 .category-list {
   text-decoration: none;
@@ -66,9 +68,7 @@
 }
 
 .lists-right {
-  /* display: flex; */
-  display: inline-block;
-
+  display: flex;
   list-style: none;
   align-items: flex-end;
 }
