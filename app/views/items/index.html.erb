@@ -2,7 +2,34 @@
 <%= render "shared/header" %>
 <div class='main'>
 
-<h1>Items#index</h1>
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <div class="subtitle" >
+      新規登録品
+    </div>
+
+
+    <ul class='item-lists'>
+      <li class='list'>   
+        <div class='item-info'>
+          <div class = image>画像</div>
+          <h3 class='item-name'>
+            登録名
+          </h3>
+          <div class = category >カテゴリー</div>
+          <div class = genre>ジャンル</div>
+        </div>
+      </li>
+
+    </ul>
+ 
+  </div>
+  
+  <%# /商品一覧 %>
+</div>
+
+  <span class='purchase-btn-text'>登録する</span>
 
 
 </div>

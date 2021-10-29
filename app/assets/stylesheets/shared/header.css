@@ -7,6 +7,7 @@
   padding: 2vh 15vw;
   display: flex; 
   flex-direction: column;
+  background-color: orange;
 }
 
 .search-bar-contents {
@@ -15,12 +16,12 @@
   align-items: center;
 
 
-.search-form {
+/*.search-form {
   width: 65vw;
   height: 5vh;
   display: flex;
   margin-bottom: 5px;
-}
+}*/
 
 .search-form>.input-box {
   width: 100%;
@@ -36,25 +37,20 @@
   padding: 8px;
 }
 
-
-
 .nav {
   font-size: 18px;
   display: flex;
-
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;
 }
 
-
 .lists-left {
   display: flex;
   min-width: 200px;
 
 }
-
 
 .category-list {
   text-decoration: none;
@@ -93,3 +89,4 @@
   margin-right: 3vw;
   color: #333333;
 }
+
