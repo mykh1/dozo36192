@@ -1,0 +1,23 @@
+
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <div class="subtitle" >
+      新規登録品
+    </div>
+
+    <div class='item-info'>
+      <ul class='item-lists'>
+        <li><%= link_to '画像', "#", class: "image" %></li>
+        <li> <%= link_to '登録品名', "#", class: "item-name" %></li>
+        <li><%= link_to 'カテゴリー', "#", class: "category" %></li>
+        <li><%= link_to 'ジャンル', "#", class: "genre" %></li>
+      </ul>
+    </div>
+  </div>
+  
+  <%# /商品一覧 %>
+  <span class='signup'>新規登録</span>
+</div>
