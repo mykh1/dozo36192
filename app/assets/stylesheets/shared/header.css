@@ -48,6 +48,19 @@
   margin-right: 3vw;
   color: #333333;
 }
+
+.reuse {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+  width: 70px;
+  border: 0;
+  cursor: pointer;
+  background-color: red;
+  padding: 8px;
+}
+
 /* end/タイトル・ニックネーム・ログイン・ログアウト */
 
 /* カテゴリー・ジャンル・検索 */
@@ -78,7 +91,7 @@
 
 .search-form {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   width: 65vw;
   height: 35px;
   margin-bottom: 5px;

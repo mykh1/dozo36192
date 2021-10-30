@@ -4,29 +4,20 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
     <div class="subtitle" >
       新規登録品
     </div>
 
-
-    <ul class='item-lists'>
-      <li class='list'>   
-        <div class='item-info'>
-          <div class = image>画像</div>
-          <h3 class='item-name'>
-            登録名
-          </h3>
-          <div class = category >カテゴリー</div>
-          <div class = genre>ジャンル</div>
-        </div>
-      </li>
-
-    </ul>
- 
+    <div class='item-info'>
+      <ul class='item-lists'>
+        <li><%= link_to '画像', "#", class: "image" %></li>
+        <li> <%= link_to '登録品名', "#", class: "item-name" %></li>
+        <li><%= link_to 'カテゴリー', "#", class: "category" %></li>
+        <li><%= link_to 'ジャンル', "#", class: "genre" %></li>
+      </ul>
+    </div>
   </div>
   
   <%# /商品一覧 %>
-</div>
-  <span class='purchase-btn-text'>登録する</span>
+  <span class='signup'>新規登録</span>
 </div>

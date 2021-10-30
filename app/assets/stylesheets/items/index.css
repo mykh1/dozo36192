@@ -6,12 +6,6 @@
   padding: 10vh 0;
 }
 
-.item-contents>.title {
-  font-size: 5vh;
-  line-height: 1.4;
-  font-weight: bold;
-}
-
 .item-contents>.subtitle {
   font-size: 3vh;
   margin: 1vh 0;
@@ -20,7 +14,7 @@
   font-weight: bold;
 }
 
-.item-lists {
+/*.item-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
