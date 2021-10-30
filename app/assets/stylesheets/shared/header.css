@@ -14,23 +14,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  white-space: nowrap;
+}
 
 
-/*.search-form {
+.search-form {
   width: 65vw;
   height: 5vh;
   display: flex;
+  justify-content: right;
   margin-bottom: 5px;
-}*/
+}
 
 .search-form>.input-box {
-  width: 100%;
+  width: 40vw;
   height: 5vh;
   padding-left: 10px;
 }
 
 .search-button {
-  width: 5vh;
+  width: 70px;
   border: 0;
   cursor: pointer;
   background-color: #3ccace;
