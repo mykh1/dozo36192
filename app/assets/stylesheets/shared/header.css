@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+/* 全体 */
 .top-page-header {
   width: 100vw;
   padding: 2vh 15vw;
@@ -10,7 +11,8 @@
   background-color: orange;
 }
 
-.search-bar-contents {
+/* タイトル・ニックネーム・ログイン・ログアウト */
+.top-contents {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,33 +20,42 @@
 }
 
 
-.search-form {
-  width: 65vw;
-  height: 5vh;
+.lists-right {
   display: flex;
-  justify-content: right;
-  margin-bottom: 5px;
+  list-style: none;
+  align-items: flex-end;
 }
 
-.search-form>.input-box {
-  width: 40vw;
-  height: 5vh;
-  padding-left: 10px;
+.user-nickname {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
 }
 
-.search-button {
-  width: 70px;
-  border: 0;
-  cursor: pointer;
-  background-color: #3ccace;
-  padding: 8px;
+
+.logout {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
 }
 
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+/* end/タイトル・ニックネーム・ログイン・ログアウト */
+
+/* カテゴリー・ジャンル・検索 */
 .nav {
   font-size: 18px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  white-space: nowrap;
   width: 100%;
   padding: 1vh 0;
 }
@@ -52,7 +63,6 @@
 .lists-left {
   display: flex;
   min-width: 200px;
-
 }
 
 .category-list {
@@ -66,30 +76,25 @@
   color: #333333;
 }
 
-.lists-right {
+.search-form {
   display: flex;
-  list-style: none;
-  align-items: flex-end;
+  justify-content: right;
+  width: 65vw;
+  height: 35px;
+  margin-bottom: 5px;
 }
 
-
-.user-nickname {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-  font-weight: bold;
+.search-form>.input-box {
+  width: 40vw;
+  height: 35px;
+  padding-left: 10px;
 }
 
-
-.logout {
-  text-decoration: none;
-  color: #333333;
+.search-button {
+  width: 70px;
+  border: 0;
+  cursor: pointer;
+  background-color: #3ccace;
+  padding: 8px;
 }
-
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
-
+/* end/カテゴリー・ジャンル・検索 */
