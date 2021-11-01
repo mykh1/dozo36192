@@ -49,8 +49,8 @@
 | first_name          | string | null: false                |
 | last_name_reading   | string | null: false                |
 | first_name_reading  | string | null: false                |
-| email               | string | null: false, unique: true  |
 | nickname            | string | null: false, unique: true  |
+| email               | string | null: false, unique: true  |
 | encrypted_password  | string | null: false                |
 
 
