@@ -3,20 +3,27 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
+
+  
   # GET /resource/sign_in
    def new
-  #   super
+    @user = User.new
    end
 
   # POST /resource/sign_in
-   def create
-  #   super
-   end
+  # def create
+    # @user = User.new(user_params)
+    # if @user.save
+      # redirect_to root_path
+    # else
+      # render :new
+    # end
+  # end
 
   # DELETE /resource/sign_out
-   def destroy
+  #  def destroy
   #   super
-   end
+  #  end
 
   # protected
 
@@ -25,3 +32,9 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 end
+
+private
+
+# def user_params
+  # params.require(:user).permit(:employee_number,:password)
+# end
