@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :authentication_keys => [:employee_number]
 
-  with_options presence: true do
+  with_options presence: true, uniqueness: true do
     validates :employee_number
     validates :nickname
   end
