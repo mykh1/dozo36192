@@ -61,11 +61,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def sign_up(resource_name, resource)
-    if !current_user_is_admin?
-      sign_in(resource_name, resource)
-    end
-  end
+  # def sign_up(resource_name, resource)
+    # if !current_user_is_admin?
+      # sign_in(resource_name, resource)
+    # end
+  # end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
