@@ -60,3 +60,4 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 gem "rails-i18n"
+gem "devise-i18n-views"
