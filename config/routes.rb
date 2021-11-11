@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
 }
 
+  devise_scope :user do
+    get '/users', to: 'devise/registrations#new'
+  end
 
   root to: "items#index"
 
