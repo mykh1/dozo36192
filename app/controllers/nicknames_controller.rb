@@ -1,18 +1,16 @@
 class NicknamesController < ApplicationController
 
   def edit
-     @user = User.find(params[:id])
+    #  @user = User.find(params[:id])
     # if @user.nickname != nil
     #   redirect_to edit_nickname_path
     # end
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
-    if @user.save
+    if current_user.update(user_params)
       redirect_to root_path
-    else
+    else 
       render :edit
     end
   end
@@ -21,6 +19,6 @@ class NicknamesController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:nickname).merge(user_id: current_user.id)
+    params.require(:user).permit(:nickname)
   end
 end
