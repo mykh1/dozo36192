@@ -1,1 +1,14 @@
 <h1>ニックネーム変更</h1>
+
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+  <%#= render 'shared/error_messages', model: f.object %>
+  <div class="field">
+    <%= f.label "新しいニックネーム" %><br />
+    <%= f.text_field :nickname, autocomplete: "current-nickname" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
+
+<% end %>
