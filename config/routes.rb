@@ -11,5 +11,6 @@ end
 
 
   root to: "items#index"
-
+  resources :nicknames, only: [:edit, :update]
 end
+ 
