@@ -1,10 +1,6 @@
 class NicknamesController < ApplicationController
 
   def edit
-    #  @user = User.find(params[:id])
-    # if @user.nickname != nil
-    #   redirect_to edit_nickname_path
-    # end
   end
 
   def update
@@ -17,8 +13,7 @@ class NicknamesController < ApplicationController
 
   private
 
-
   def user_params
-    params.require(:user).permit(:nickname)
+    params.permit(:nickname)
   end
 end
