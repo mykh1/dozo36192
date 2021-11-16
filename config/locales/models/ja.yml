@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        employee_number: 社員番号
+        last_name: 苗字
+        first_name: 名前
+        last_name_reading: 苗字(カナ)
+        first_name_reading: 名前(カナ)
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(再確認)

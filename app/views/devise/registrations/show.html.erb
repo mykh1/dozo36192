@@ -1,0 +1,20 @@
+<h1>ユーザー詳細ページ</h1>
+  <div class="item-box">
+  <table class="detail-table">
+    <tbody>
+      <tr>
+        <th class="detail-item">名前</th>
+        <td class="detail-value"><%= current_user.last_name %><%= current_user.first_name %></td>
+      </tr>
+      <tr>
+        <th class="detail-item">ニックネーム</th>
+        <td class="detail-value"><%= current_user.nickname %><%= link_to 'ニックネームを変更', edit_nickname_path %></td>
+
+      </tr>
+      <tr>
+        <th class="detail-item">パスワード</th>
+        <td class="detail-value"><%= link_to 'パスワードを変更', edit_user_registration_path %></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
