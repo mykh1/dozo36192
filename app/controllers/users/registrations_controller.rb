@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :authenticate_user!, only: [:new, :create]
-  prepend_before_action :require_no_authentication, except: [:new, :create]
+  # before_action :authenticate_user!, only: [:new, :create]
+  prepend_before_action :require_no_authentication, only: [:cancel]
 
   # before_action :admin_scan, only: [:new, :create]
   # before_action :creatable?, only: [:new, :create]
