@@ -1,0 +1,32 @@
+<h1>Admin::Users#new</h1>
+<p>Find me in app/views/admin/users/new.html.erb</p>
+<header class='top-page-header'>
+    <div class='top-contents'>
+    <%= link_to "タイトル", class:"title" %>
+      <ul class='lists-right'>
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.nickname, users_path, class: "user-nickname" %></li> 
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <li><%= link_to 'リユース登録', class: "reuse" %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+
+        <% end %>
+      </ul>
+    </div>
+
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+      <li><%= link_to 'ジャンル', "#", class: "genre-list" %></li>
+    </ul>
+    <form class="search-form" action="#">
+      <input class='input-box' placeholder='キーワードから探す'>
+      <button class="search-button">
+        検索する
+      </button>
+    </form>
+  </div>
+
+
+</header>
