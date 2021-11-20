@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'users/new'
-  end
+  # namespace :admin do
+  #   get 'users/new'
+  #   # post 'users/create'
+  # end
+
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
-    registrations: 'users/registrations'
+    # registrations: 'users/registrations'
   }
 
   devise_scope :user do
@@ -16,12 +18,10 @@ Rails.application.routes.draw do
 
   root to: "items#index"
   resource :nickname, only: [:edit, :update]
-  resources :admin do
-    resources :restaurants, only:[:new, :create]
-  end
-  # namespace :admin do
-  #   get 'restaurants/new'
-  # end
+  #  resources :admin do
+     resources :users, only: [:new, :create]
+  #  end
+
 
 end
  
