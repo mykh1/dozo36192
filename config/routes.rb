@@ -18,9 +18,9 @@ Rails.application.routes.draw do
 
   root to: "items#index"
   resource :nickname, only: [:edit, :update]
-  #  resources :admin do
-     resources :users, only: [:new, :create]
-  #  end
+  namespace :admin do
+    resources :users, only: [:new, :create]
+  end
 
 
 end

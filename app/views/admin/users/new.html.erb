@@ -1,11 +1,6 @@
-<h1>Admin::Users#new</h1>
-<p>Find me in app/views/admin/users/new.html.erb</p>
-<%#= render "shared/second-header"%>
-
-<%#= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
 
-<%= form_with model: @user, url: nickname_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user, url: admin_users_path, class: 'registration-main', local: true do |f| %>
 
 <div class='form-wrap'>
   <div class='form-header'>
@@ -14,7 +9,6 @@
     </h1>
   </div>
 
-  <%#= render "devise/shared/error_messages", resource: resource %>
   <%= render 'shared/error_messages', model: f.object %>
 
   <div class="form-group">

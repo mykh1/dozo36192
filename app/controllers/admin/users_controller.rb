@@ -10,11 +10,12 @@ class Admin::UsersController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:employee_number, :last_name, :first_name, :last_name_reading, :first_name_reading, :nickname, :email, :encrypted_password)
+    params.require(:user).permit(:employee_number, :last_name, :first_name, :last_name_reading, :first_name_reading, :nickname, :email, :password, :password_confirmation)
   end
 end
