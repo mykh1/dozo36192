@@ -1,4 +1,4 @@
-<h1>リユース登録する</h1>
+<h1>出品登録する</h1>
 
 <%= form_with model: @item,local: true do |f| %>
 <%= render 'shared/error_messages', model: f.object %>
@@ -55,6 +55,8 @@
     </div>
     <%# /商品の詳細 %>
 
-<div>登録</div>
-<div>戻る</div>
+    <div class="sell-btn-contents">
+      <%= f.submit "出品する",class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
  <% end %>
