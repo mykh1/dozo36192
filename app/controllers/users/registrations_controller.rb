@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# class Users::RegistrationsController < Devise::RegistrationsController
+ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :authenticate_user!
   # before_action :authenticate_user!, only: [:new, :create]
   # prepend_before_action :require_no_authentication, only: [:cancel]
@@ -54,7 +54,7 @@
   #   super
   # end
 
-   protected
+  #  protected
 
   #  def admin_scan
   #   unless current_user.admin?
@@ -93,4 +93,4 @@
   #      raise CanCan::AccessDenied
   #    end
   #  end
-# end
+ end

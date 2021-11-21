@@ -55,24 +55,24 @@ RSpec.describe User, type: :model do
       it 'last_name_readingが空だと登録できない' do
         @user.last_name_reading = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("苗字（カナ）を入力してください")
+        expect(@user.errors.full_messages).to include("苗字(カナ)を入力してください", "苗字(カナ)がカタカナで入力されていません")
       end
       it 'last_name_readingが全角カタカナでないと登録できない' do
         @user.last_name_reading = 'やまだ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("苗字（カナ）がカタカナで入力されていません")
+        expect(@user.errors.full_messages).to include("苗字(カナ)がカタカナで入力されていません")
       end
 
       # 名前（カナ）
       it 'first_name_readingが空だと保存でないと登録できない' do
         @user.first_name_reading = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("名前（カナ）を入力してください")
+        expect(@user.errors.full_messages).to include("名前(カナ)を入力してください", "名前(カナ)がカタカナで入力されていません")
       end
       it 'first_name_readingが全角カタカナでないと登録できない' do
         @user.first_name_reading = 'たろう'
         @user.valid?
-        expect(@user.errors.full_messages).to include("名前（カナ）がカタカナで入力されていません")
+        expect(@user.errors.full_messages).to include("名前(カナ)がカタカナで入力されていません")
       end
 
       # ニックネーム

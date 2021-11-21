@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #   # post 'users/create'
   # end
 
+  # devise_for :users, skip: 'registrations'
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
