@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :name,              null: false
       t.text :description,         null: false
       t.integer :category_id,      null: false
-      t.integer :genre_id,         null: false
+      t.integer :genre_id,         null: false #削除
       t.integer :condition_id,     null: false
       t.references :user,          null: false, foreign_key: true
       t.timestamps
