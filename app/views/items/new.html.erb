@@ -1,11 +1,8 @@
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">リユース品の情報を入力</h2>
-    <%= form_with model: @item,local: true do |f| %>
+<h1>リユース品情報を登録する</h1>
 
-    <%= render 'shared/error_messages', model: f.object %>
-
-    <%# 画像 %>
-    <div class="img-upload">
+<%= form_with model: @item,local: true do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
+<div>画像</div>
       <div class="weight-bold-text">
         商品画像
         <span class="indispensable">必須</span>
@@ -17,47 +14,47 @@
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
-    <%# /画像 %>
-    <%# リユース名と説明 %>
+
+    <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
         商品名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           商品の説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :item_description, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /リユース名と商品説明 %>
+    <%# /商品名と商品説明 %>
 
-    <%# リユース品の詳細 %>
+    <%# 商品の詳細 %>
     <div class="items-detail">
-      <div class="weight-bold-text">リユース品の詳細</div>
+      <div class="weight-bold-text">商品の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
-          カテゴリー
+        <%#= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+                <div class="weight-bold-text">
+          商品の状態
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%#= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-genre"}) %>
         <div class="weight-bold-text">
-          リユース品の状態
+          商品の状態
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%#= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box", id:"item-condition"}) %>
       </div>
     </div>
-    <%# /リユース品の詳細 %>
+    <%# /商品の詳細 %>
 
- 
-  </div>
-    <%# /販売価格 %>
+<div>登録</div>
+<div>戻る</div>
+ <% end %>
