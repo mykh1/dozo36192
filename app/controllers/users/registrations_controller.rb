@@ -1,15 +1,25 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
-  prepend_before_action :require_no_authentication, only: [:cancel]
+ class Users::RegistrationsController < Devise::RegistrationsController
+  # before_action :authenticate_user!
+  # before_action :authenticate_user!, only: [:new, :create]
+  # prepend_before_action :require_no_authentication, only: [:cancel]
+
+  # before_action :admin_scan, only: [:new, :create]
   # before_action :creatable?, only: [:new, :create]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
+  #  def new
+  # 
+  #   # user_signed_in? && current_user.has_role?(:admin)
+  #   # user_signed_in? && current_user.has_attribute?(:admin)
+  #   # unless user_signed_in? && current_user.admin?
+  #   #   redirect_to root_path 
+  #   # end
   #   super
-  #  end
+  # end
 
   # POST /resource
   #  def create
@@ -44,7 +54,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-   protected
+  #  protected
+
+  #  def admin_scan
+  #   unless current_user.admin?
+  #     redirect_to root_path   #管理者以外が管理者のみ実行できるアクションを実行しようとしたときのリダイレクト先
+  #   end
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -56,30 +72,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
   # end
 
-  def current_user_is_admin?
-    user_signed_in? && current_user.has_role?(:admin)
-  end
+  # def current_user_is_admin?
+  #   user_signed_in? && current_user.has_role?(:admin)
+  # end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
   #   super(resource)
   # end
 
-  # def sign_up(resource_name, resource)
-    # if !current_user_is_admin?
-      # sign_in(resource_name, resource)
-    # end
-  # end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
 
-  # def creatable?
-    # raise CanCan::AccessDenied unless user_signed_in?
-    # if !current_user_is_admin?
-      # raise CanCan::AccessDenied
-    # end
-  # end
-end
+  #  def creatable?
+  #    raise CanCan::AccessDenied unless user_signed_in?
+  #    if !current_user_is_admin?
+  #      raise CanCan::AccessDenied
+  #    end
+  #  end
+ end
