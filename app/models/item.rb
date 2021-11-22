@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   belongs_to :user
   has_one_attached :image
+
+  belongs_to :category
 
   with_options presence: true do
     validates :image
@@ -8,6 +12,9 @@ class Item < ApplicationRecord
     validates :description
   end
 
-
+  with_options presence: true, numericality: { other_than: 0, message: "が選択されていません" } do
+    validates :category_id
+    validates :condition_id
+  end
 
 end
