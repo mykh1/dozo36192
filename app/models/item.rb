@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   belongs_to :category
+  belongs_to :condition
 
   with_options presence: true do
     validates :image
