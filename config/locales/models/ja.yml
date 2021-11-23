@@ -13,3 +13,15 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード(再確認)
+
+    models:
+      item: 品物
+    attributes:
+      item:
+        image: 画像
+        name: 品名
+        description: 説明
+        category_id: カテゴリー
+        condition_id: 品物の状態
+        user: ユーザー
+        

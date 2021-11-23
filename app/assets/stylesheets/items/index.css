@@ -14,12 +14,13 @@
   font-weight: bold;
 }
 
-/*.item-lists {
+.item-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 
 .item-lists>.list {
   width: 37vh;

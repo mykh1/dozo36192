@@ -8,18 +8,46 @@
       新規登録品
     </div>
 
-    <div class='item-info'>
-      <ul class='item-lists'>
-        <li><%= link_to '画像', "#", class: "image" %></li>
-        <li> <%= link_to '登録品名', "#", class: "item-name" %></li>
-        <li><%= link_to 'カテゴリー', "#", class: "category" %></li>
-        <li><%= link_to 'ジャンル', "#", class: "genre" %></li>
-      </ul>
-    </div>
+    <ul class='item-lists'>
+      <% if @items.present? %>
+
+        <% @items.each do |item| %>
+
+          <li class='list'>        
+              <%= link_to item_path(item.id), method: :get do %>
+
+                <div class='item-img-content'>
+                  <%= image_tag item.image, class: "item-img" %>
+                    <%# <%if item.order_history.present?%>
+                      <%# <div class='sold-out'> %>
+                        <%# <span>リユース!!</span> %>
+                      <%# </div> %>
+                    <%# <% end %>
+                </div>
+                
+                <div class='item-info'>
+                  <h3 class='item-name'>
+                    <%= item.name %>
+                  </h3>
+                </div>
+              <% end %>
+          </li>
+        <% end %>
+
+      <% else %>       
+        <li class='list'> 
+          <%= link_to '#' do %>
+            <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  リユース！
+                </h3>
+              </div>
+          <% end %>
+        </li>
+      <% end %>
+
+    </ul>
   </div>
-  
-  <%# /商品一覧 %>
-
-
 </div>
-<%= render "shared/footer" %>
+
