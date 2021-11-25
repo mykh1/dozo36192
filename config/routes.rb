@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # end
 
   # devise_for :users, skip: 'registrations'
-  devise_for :users, skip: [:registrations], controllers: {
+  devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
   }
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   root to: "items#index"
   resources :items
+  resources :orders, only: [:index, :create, :show]
   resource :nickname, only: [:edit, :update]
   namespace :admin do
     resources :users, only: [:new, :create]
