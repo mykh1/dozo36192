@@ -19,4 +19,6 @@ class Item < ApplicationRecord
     validates :condition_id
   end
 
+  
+
 end
