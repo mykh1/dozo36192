@@ -2,20 +2,13 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
 
-  # def index
-  #   @orders = current_user.orders
-  #   # @item = Item.find(params[:id])
-  #   # @user = User.find_by(id: @item.user_id)
-  # end
 
-
-  def create
- 
+  def create 
+    @item = Item.find(params[:item_id])
 
   end
 
   
-
 
 
 end
