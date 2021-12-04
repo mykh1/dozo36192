@@ -33,7 +33,7 @@
     <div class="item-explain-box">
       <span><%= @item.description %></span>
     </div>
-    <%= form_with model: @order, url: item_orders_path(item_id), method: "post", class: 'order', local: true do |f| %>
+    <%= form_with model: @order, url: item_orders_path(@item.id), method: "post", class: 'order', local: true do |f| %>
       <%#= f.check_box :accept ,checked:true %>
       <%= f.label "受け取りを希望する" %>
       <%= f.submit "決定" %>

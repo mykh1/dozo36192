@@ -4,8 +4,10 @@ class OrdersController < ApplicationController
 
 
   def create 
+# binding.pry
     @item = Item.find(params[:item_id])
 
+    redirect_to root_path
   end
 
   
