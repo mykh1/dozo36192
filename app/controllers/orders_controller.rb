@@ -6,8 +6,9 @@ class OrdersController < ApplicationController
   def create 
 # binding.pry
     @item = Item.find(params[:item_id])
-
+    if @item.save
     redirect_to root_path
+    end
   end
 
   
