@@ -1,18 +1,21 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
-
-
 
   def create 
-# binding.pry
     @item = Item.find(params[:item_id])
-    if @item.save
-    redirect_to root_path
+    @user = User.find(@item.user_id)
+    @order = current_user.orders.build(order_params)
+    if @order.save
+      redirect_to root_path
+    else
+      render "items/show"
     end
   end
 
-  
+  private
 
+  def order_params
+    params.permit(:item_id, :accept)
+  end
 
 end
 
