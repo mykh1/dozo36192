@@ -33,9 +33,10 @@
     <div class="item-explain-box">
       <span><%= @item.description %></span>
     </div>
-    <%= form_with model: @order, url: item_orders_path(@item.id), method: "post", class: 'order', local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
-      <%= f.check_box :accept ,checked:false %>
+    <%= form_with model: @order, url: orders_path, method: "post", class: 'order', local: true do |f| %>
+    <%#= render 'shared/error_messages', model: f.object %>
+      <%= f.hidden_field :item_id, value: @item.id %>
+      <%= f.check_box :accept, checked:false %>
       <%= f.label "受け取りを希望する" %>
       <%= f.submit "決定" %>
     <% end -%>

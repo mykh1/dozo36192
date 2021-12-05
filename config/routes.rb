@@ -29,9 +29,9 @@ Rails.application.routes.draw do
   end
 
   root to: "items#index"
-  resources :items do
+  resources :items 
     resources :orders, only: [:create]
-  end
+  
   resource :nickname, only: [:edit, :update]
   namespace :admin do
     resources :users, only: [:new, :create]
