@@ -8,6 +8,12 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def show
+    @item = Item.find(params[:id])
+    @user = User.find_by(id: @item.user_id)
+    @order = Order.new
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -15,11 +21,6 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @item = Item.find(params[:id])
-    @user = User.find_by(id: @item.user_id)
   end
 
   private

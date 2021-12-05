@@ -6,36 +6,37 @@
 
     <%# 画像 %>
     <div class="item-img-content">
-    <%= image_tag @item.image, class:"item-box-img" %>
+      <%= image_tag @item.image, class: "item-box-img" %>
     </div>
-    
-    
+
+
     <%# <div>品名</div> %>
     <div class="name">
       <%= @item.name %>
     </div>
 
     <%# <div>カテゴリー</div> %>
-      <div class="detail-item">
-        <%= @item.category.name %>
-      </div>
+    <div class="detail-item">
+      <%= @item.category.name %>
+    </div>
 
     <%# <div>状態</div> %>
-      <div class="detail-item">
-        <%= @item.condition.name %>
-      </div>
+    <div class="detail-item">
+      <%= @item.condition.name %>
+    </div>
 
-      <div class="detail-item">
-        <%= @user.nickname %>
-      </div>
+    <div class="detail-item">
+      <%= current_user.nickname %>
+    </div>
 
     <div>説明</div>
     <div class="item-explain-box">
       <span><%= @item.description %></span>
     </div>
-    <%= form_with model: @order, url: item_orders_path(@item.id), method: "post", class: 'order', local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
-      <%= f.check_box :accept ,checked:false %>
+    <%= form_with model: @order, url: item_orders_path(@item), method: "post", class: 'order', local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <%= f.hidden_field :item_id, value: @item.id %>
+      <%= f.check_box :accept, checked: false %>
       <%= f.label "受け取りを希望する" %>
       <%= f.submit "決定" %>
     <% end -%>
