@@ -34,12 +34,18 @@
       <span><%= @item.description %></span>
     </div>
     <%= form_with model: @order, url: item_orders_path(@item), method: "post", class: 'order', local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
-      <%= f.hidden_field :item_id, value: @item.id %>
-      <%= f.check_box :accept, checked: false %>
-      <%= f.label "受け取りを希望する" %>
-      <%= f.submit "決定" %>
-    <% end -%>
-
+      <% if user_signed_in? && @item.order == nil %>
+        <% if current_user.id == @item.user_id %>
+          <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+          <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
+        <% else %>
+          <%= render 'shared/error_messages', model: f.object %>
+            <%= f.hidden_field :item_id, value: @item.id %>
+            <%= f.check_box :accept, checked: false %>
+            <%= f.label "受け取りを希望する" %>
+            <%= f.submit "決定" %>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
 </div>

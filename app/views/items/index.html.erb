@@ -12,17 +12,13 @@
       <% if @items.present? %>
 
         <% @items.each do |item| %>
-
+          
+          <% if item.order.nil? %>
           <li class='list'>        
               <%= link_to item_path(item.id), method: :get do %>
 
                 <div class='item-img-content'>
                   <%= image_tag item.image, class: "item-img" %>
-                    <%# <%if item.order_history.present?%>
-                      <%# <div class='sold-out'> %>
-                        <%# <span>リユース!!</span> %>
-                      <%# </div> %>
-                    <%# <% end %>
                 </div>
                 
                 <div class='item-info'>
@@ -30,8 +26,10 @@
                     <%= item.name %>
                   </h3>
                 </div>
+              
               <% end %>
           </li>
+          <% end %>
         <% end %>
 
       <% else %>       
