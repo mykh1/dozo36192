@@ -2,36 +2,93 @@
   box-sizing: border-box;
 }
 
-/* 全体 */
 .top-page-header {
-  width: 100vw;
-  padding: 2vh 15vw;
-  display: flex; 
-  flex-direction: column;
-  background-color: orange;
-}
-
-/* タイトル・ニックネーム・ログイン・ログアウト */
-.top-contents {
+  width: 100%;
+  position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   white-space: nowrap;
+  background-color: white;
+  
 }
 
+.dozo-logo{
+  display: flex-start;
+  align-items: center;
+  width: 200px;
+  height: 90px;
+}
 
-.lists-right {
+.top-contents{ 
   display: flex;
-  list-style: none;
-  align-items: flex-end;
+  justify-content: space-around;
+  align-items: center; 
 }
 
-.user-nickname {
+.category{
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
   color: #333333;
-  font-weight: bold;
+}
+
+.search{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40vw;
+  height: 35px;
+  margin-bottom: 5px;
+  width: 100%;
+  /* position: relative; */
+}
+
+.input-box {
+  /* width: 20vw;
+  height: 35px; */
+  padding-left: 10px; 
+  width: 100%;
+  border: 1px solid gray;
+  border-right: none;
+  padding: 5px;
+  height: 34px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.search-button {
+  width: 45px;
+  height: 36px;
+  border: 1px solid gray;
+  background: gray;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+
+
+.nav{
+  display: flex;
+  justify-content: space-around;
+}
+
+.lists-right{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.nickname {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
 }
 
 
@@ -57,57 +114,58 @@
   width: 70px;
   border: 0;
   cursor: pointer;
-  background-color: red;
+  background-color: orange;
   padding: 8px;
 }
 
-/* end/タイトル・ニックネーム・ログイン・ログアウト */
 
-/* カテゴリー・ジャンル・検索 */
-.nav {
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  white-space: nowrap;
+
+
+
+/* ここから */
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
   width: 100%;
-  padding: 1vh 0;
-}
-
-.lists-left {
+  position: relative;
   display: flex;
-  min-width: 200px;
 }
 
-.category-list {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
+.searchTerm {
+  /* width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF; */
 }
 
-.genre-list {
-  text-decoration: none;
-  color: #333333;
+.search:focus{
+  color: #00B4CC;
 }
 
-.search-form {
-  display: flex;
-  justify-content: center;
-  width: 65vw;
-  height: 35px;
-  margin-bottom: 5px;
-}
-
-.search-form>.input-box {
-  width: 40vw;
-  height: 35px;
-  padding-left: 10px;
-}
-
-.search-button {
-  width: 70px;
-  border: 0;
+/* .search-button {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
-  background-color: #3ccace;
-  padding: 8px;
+  font-size: 20px;
+} */
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-/* end/カテゴリー・ジャンル・検索 */
