@@ -24,4 +24,10 @@ ja:
         category_id: カテゴリー
         condition_id: 品物の状態
         user: ユーザー
-        
+
+    models:
+      order: 受取
+    attributes:
+      order:
+        accept: 受け取り
+

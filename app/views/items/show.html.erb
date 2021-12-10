@@ -1,4 +1,4 @@
-<div>タイトル</div>
+<div>タイトル1</div>
 
 <div class="item-show">
   <div class="item-box">
@@ -6,7 +6,7 @@
 
     <%# 画像 %>
     <div class="item-img-content">
-    <%= image_tag @item.image, class:"item-box-img" %>
+      <%= image_tag @item.image, class:"item-box-img" %>
     </div>
     
     
@@ -16,21 +16,36 @@
     </div>
 
     <%# <div>カテゴリー</div> %>
-      <div class="detail-item">
-        <%= @item.category.name %>
-      </div>
+    <div class="detail-item">
+      <%= @item.category.name %>
+    </div>
 
     <%# <div>状態</div> %>
-      <div class="detail-item">
-        <%= @item.condition.name %>
-      </div>
+    <div class="detail-item">
+      <%= @item.condition.name %>
+    </div>
+
+    <div class="detail-item">
+      <%= @user.nickname %>
+    </div>
 
     <div>説明</div>
     <div class="item-explain-box">
       <span><%= @item.description %></span>
     </div>
-
-    <div>受け取り画面に進む</div>
-
+    <%= form_with model: @order, url: item_orders_path(@item), method: "post", class: 'order', local: true do |f| %>
+      <% if user_signed_in? && @item.order == nil %>
+        <% if current_user.id == @item.user_id %>
+          <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+          <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
+        <% else %>
+          <%= render 'shared/error_messages', model: f.object %>
+            <%= f.hidden_field :item_id, value: @item.id %>
+            <%= f.check_box :accept, checked: false %>
+            <%= f.label "受け取りを希望する" %>
+            <%= f.submit "決定" %>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
 </div>

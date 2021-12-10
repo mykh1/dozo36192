@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :authentication_keys => [:employee_number]
 
   has_many :items
+  has_many :orders
 
 
   with_options presence: true, uniqueness: true do

@@ -2,27 +2,46 @@
 <%= render "shared/header" %>
 <div class='main'>
 
+
+
+
   <%# 商品一覧 %>
   <div class='item-contents'>
+
+  <div class= "subtitle">
+  お知らせ
+   </div>
+  <div class= "news" >
+  <%# <div style="height: 100px; overflow-y: scroll; border: 1px #999999 solid;"> %>
+    <ul>
+    <li>12月 年末年始について</li>
+    <li>11月 社内リユース品・メモ帳追加しました</li>
+    <li>10月 放置傘をリユース！</li>
+    <li>9月 </li>
+    <li>8月 </li>
+    <li>7月 </li>
+    <li>6月 </li>
+    <li>5月 ゴールデンウィークの利用について</li>
+    </ul>
+    </div>
+
+
+
     <div class="subtitle" >
-      新規登録品
+      新着情報
     </div>
 
     <ul class='item-lists'>
       <% if @items.present? %>
 
         <% @items.each do |item| %>
-
+          
+          <% if item.order.nil? %>
           <li class='list'>        
               <%= link_to item_path(item.id), method: :get do %>
 
                 <div class='item-img-content'>
                   <%= image_tag item.image, class: "item-img" %>
-                    <%# <%if item.order_history.present?%>
-                      <%# <div class='sold-out'> %>
-                        <%# <span>リユース!!</span> %>
-                      <%# </div> %>
-                    <%# <% end %>
                 </div>
                 
                 <div class='item-info'>
@@ -30,8 +49,10 @@
                     <%= item.name %>
                   </h3>
                 </div>
+              
               <% end %>
           </li>
+          <% end %>
         <% end %>
 
       <% else %>       

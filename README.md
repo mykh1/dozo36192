@@ -58,7 +58,7 @@
 ### Association
 
 - has_many : items
-- has_many : histories
+- has_many : orders
 
 
 ## items テーブル
@@ -73,11 +73,11 @@
 | user                | references    | null: false, foreign_key: true |
 
 ### Association
-- has_one : history
+- has_one : order
 - belongs_to : user
 
 
-## histories テーブル
+## orders テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
