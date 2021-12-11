@@ -20,6 +20,14 @@
   font-weight: bold;
 }
 
+.subtitle2 {
+  font-size: 3vh;
+  margin: 7vh 0 0;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
 
 .news {
   width: 500px;
