@@ -16,7 +16,15 @@
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #666666;
+  color: black;
+  font-weight: bold;
+}
+
+.subtitle2 {
+  font-size: 3vh;
+  margin: 7vh 0 0;
+  text-decoration: none;
+  color: black;
   font-weight: bold;
 }
 
@@ -24,7 +32,7 @@
 .news {
   width: 500px;
   height: 100px;
-  overflow: scroll;
+  overflow-y: scroll;
   border: gray 1px solid;
 }
 
@@ -39,4 +47,30 @@
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
+  /* text-decoration: none;  */
 }
+
+/* 登録品の名前とカテゴリー */
+.item-info {
+  display:inline-block;
+  text-decoration: none; 
+}
+
+.item-category {
+  color: white;
+  background-color: black;
+  display:inline-block;
+  text-decoration: none;
+  padding: 0 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.item-name {
+  color: black;
+  display:inline-block; 
+  text-decoration: none; 
+}
+/*  */
+
+

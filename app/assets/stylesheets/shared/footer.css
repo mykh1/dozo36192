@@ -1,0 +1,14 @@
+
+.top-page-footer {
+  width: 100%;
+  background-color: black;
+}
+
+.sign-up {
+  text-decoration: none;
+  display: flex;
+  justify-content: end;
+  color: white;
+  padding: 15px;
+
+}

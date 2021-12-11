@@ -1,32 +1,19 @@
 <header class='top-page-header'>
 
-    <div class='top-contents'>
-      <%= link_to image_tag("dozo-logo.png", class:"dozo-logo"), "/" %>
-    </div>
+    <%# <div class ='top-contents'> %>
+      <%= link_to 'DOZO', root_path, class: "top-contents" %>
+    <%# </div> %>
 
-<%# <kokokara> %>
-<%# <div class="wrap">
-   <div class="search">
-      <input type="text" class="searchTerm" placeholder="What are you looking for?">
-      <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-     </button>
-   </div>
-</div> %>
-<%# <kokokara> %>
 
-<%# <%= link_to 'カテゴリー', "#", class: "category" %> 
     <div class='search'>
       <%= link_to 'カテゴリー', "#", class: "category" %>
 
-      <%# <サーチ> %>
-      
+      <%# <サーチ> %>      
       <form class="search-form" action="#">
         <input class='input-box' placeholder='キーワードから探す'><button class="search-button">
           検索
         </button>
-        </form>
- 
+        </form> 
       <%# <サーチ> %>
 
      </div>
