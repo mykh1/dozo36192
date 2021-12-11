@@ -34,14 +34,14 @@
 }
 
 
-.category{
+.category {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
   color: white;
 }
 
-.search{
+.search {
   display: flex;
   justify-content: center;
   align-items: center;
