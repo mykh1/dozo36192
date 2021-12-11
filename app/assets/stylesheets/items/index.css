@@ -16,7 +16,7 @@
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #666666;
+  color: black;
   font-weight: bold;
 }
 
@@ -24,7 +24,7 @@
 .news {
   width: 500px;
   height: 100px;
-  overflow: scroll;
+  overflow-y: scroll;
   border: gray 1px solid;
 }
 
