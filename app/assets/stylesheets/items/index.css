@@ -42,20 +42,18 @@
   /* text-decoration: none;  */
 }
 
-/* .item-info {
-  color: black;
+/* 登録品の名前とカテゴリー */
+.item-info {
   display:inline-block;
   text-decoration: none; 
-} */
-
-
+}
 
 .item-category {
   color: white;
   background-color: black;
   display:inline-block;
   text-decoration: none;
-  padding: 1px 5px;
+  padding: 0 5px;
   border-radius: 5px;
   font-size: 15px;
 }
@@ -65,3 +63,6 @@
   display:inline-block; 
   text-decoration: none; 
 }
+/*  */
+
+
