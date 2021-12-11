@@ -8,14 +8,14 @@
   <%# 商品一覧 %>
   <div class='item-contents'>
 
-  <div class= "subtitle">
+  <h2 class= "subtitle">
   お知らせ
-   </div>
+   </h2>
   <div class= "news" >
   <%# <div style="height: 100px; overflow-y: scroll; border: 1px #999999 solid;"> %>
     <ul>
     <li>12月 年末年始について</li>
-    <li>11月 社内リユース品・メモ帳追加しました</li>
+    <li>11月 社内リユース品・メモ帳を追加</li>
     <li>10月 放置傘をリユース！</li>
     <li>9月 </li>
     <li>8月 </li>
@@ -27,9 +27,9 @@
 
 
 
-    <div class="subtitle" >
+    <h2 class="subtitle" >
       新着情報
-    </div>
+    </h2>
 
     <ul class='item-lists'>
       <% if @items.present? %>
@@ -45,9 +45,12 @@
                 </div>
                 
                 <div class='item-info'>
+                  <h4 class='item-category'>
+                    <%= item.category.name %>
+                  </h4> 
                   <h3 class='item-name'>
                     <%= item.name %>
-                  </h3>
+                  </h3>                 
                 </div>
               
               <% end %>

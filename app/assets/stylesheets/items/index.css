@@ -39,4 +39,29 @@
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
+  /* text-decoration: none;  */
+}
+
+/* .item-info {
+  color: black;
+  display:inline-block;
+  text-decoration: none; 
+} */
+
+
+
+.item-category {
+  color: white;
+  background-color: black;
+  display:inline-block;
+  text-decoration: none;
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.item-name {
+  color: black;
+  display:inline-block; 
+  text-decoration: none; 
 }
