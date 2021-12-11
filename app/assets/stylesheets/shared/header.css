@@ -11,9 +11,7 @@
   white-space: nowrap;
   background-color: black;
   padding: 0 10px;
-  
 }
-
 
 
 .top-contents{ 
@@ -24,8 +22,9 @@
   height: 90px;
   font-size: 40px;
   color: white;
+  text-decoration: none;
   position:  relative;            /* 位置指定 */
-  animation: anime1 1s ease;      /* アニメーション指定 */
+  animation: anime1 2s ease;      /* アニメーション指定 */
 }
 
 @keyframes anime1{
@@ -55,7 +54,6 @@
   padding: 4px 0 5px 5px;
   height: 35px;
   width: 20vw;
-  
   border-radius: 5px 0 0 5px;
   outline: none;
   color: white;
