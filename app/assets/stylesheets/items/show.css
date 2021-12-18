@@ -1,0 +1,80 @@
+
+.item-show{
+  padding: 15vh 0;
+
+}
+
+.item-box {
+  background-color: #FFF;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-box-img {
+  width: 60vh;
+  height: 60vh;
+  padding: 15px;
+}
+
+.item-text {
+  flex-direction: column;
+  padding: 0 10vw 0;
+}
+
+.show-item-name {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  font-weight: bold;
+}
+ 
+.i-category-condition {
+  display: flex;
+}
+
+.item-condition {
+  color: black;
+  display:inline-block;
+  text-decoration: none;
+  padding: 0 5px;
+  border: 1px solid black;
+  margin: 0 5px 0;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.item-nickname {
+  padding: 15px 0;
+  font-size: 13px;
+}
+
+
+.item-order-box {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.item-btn {
+  color: black;
+  display:inline-block; 
+  text-decoration: none; 
+  padding: 10px 20px;
+  border: 3px solid black;
+  margin: 0 30px 0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+
+.item-order {
+  color: black;
+  background-color: white;
+  padding: 10px 20px;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}

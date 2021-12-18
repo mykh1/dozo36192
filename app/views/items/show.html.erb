@@ -1,49 +1,60 @@
-<div>タイトル1</div>
+<%= render "shared/header" %>
 
 <div class="item-show">
   <div class="item-box">
-    <div>詳細</div>
 
     <%# 画像 %>
-    <div class="item-img-content">
+    <div class= "item-img-content">
       <%= image_tag @item.image, class:"item-box-img" %>
     </div>
     
-    
-    <%# <div>品名</div> %>
-    <div class="name">
-      <%= @item.name %>
-    </div>
+    <div class = "item-text">
 
-    <%# <div>カテゴリー</div> %>
-    <div class="detail-item">
-      <%= @item.category.name %>
-    </div>
+        <%# 品名 %>
+        <h2 class="show-item-name">
+          <%= @item.name %>
+        </h2>
 
-    <%# <div>状態</div> %>
-    <div class="detail-item">
-      <%= @item.condition.name %>
-    </div>
+      <div class="i-category-condition">
+        <%# カテゴリー %>
+        <div class="item-category ">
+          <%= @item.category.name %>
+        </div>
+        <%# 状態 %>
+        <div class="item-condition">
+          <%= @item.condition.name %>
+        </div>
+      </div>
 
-    <div class="detail-item">
-      <%= @user.nickname %>
-    </div>
+        <div class="item-nickname">
+        出品者：
+          <%= @user.nickname %>
+        </div>
 
-    <div>説明</div>
-    <div class="item-explain-box">
-      <span><%= @item.description %></span>
+      <div class="item-detail">
+        <span><%= @item.description %></span>
+      </div>
     </div>
+  </div>
+
+  <div class="item-order-box">    
     <%= form_with model: @order, url: item_orders_path(@item), method: "post", class: 'order', local: true do |f| %>
       <% if user_signed_in? && @item.order == nil %>
         <% if current_user.id == @item.user_id %>
-          <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
-          <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
+          <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "item-btn" %>
+          <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-btn" %>
         <% else %>
           <%= render 'shared/error_messages', model: f.object %>
-            <%= f.hidden_field :item_id, value: @item.id %>
-            <%= f.check_box :accept, checked: false %>
-            <%= f.label "受け取りを希望する" %>
-            <%= f.submit "決定" %>
+          <div class="item-check-box">
+            <div class="item-check">
+              <%= f.hidden_field :item_id, value: @item.id %>
+              <%= f.check_box :accept, checked: false %>
+              <%= f.label "受け取りを希望する" %>
+            </div>
+            <div class="item-order-submit">
+              <%= f.submit "決定", class: "item-order" %>
+            </div>
+          </div>
         <% end %>
       <% end %>
     <% end %>
