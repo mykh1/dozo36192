@@ -15,6 +15,7 @@
 .item-box-img {
   width: 60vh;
   height: 60vh;
+  padding: 15px;
 }
 
 .item-text {
