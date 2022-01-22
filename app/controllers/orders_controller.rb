@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   def create 
     @order = current_user.orders.build(order_params)
     if @order.save
+      OrderCompletedMailer.with(order: @order).order_completed.deliver_lager
       redirect_to root_path
     else
       @item = Item.find(params[:item_id])
