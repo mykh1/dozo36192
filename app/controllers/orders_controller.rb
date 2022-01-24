@@ -2,8 +2,11 @@ class OrdersController < ApplicationController
 
   def create 
     @order = current_user.orders.build(order_params)
+    @itam = item_user.
+
     if @order.save
       OrderCompletedMailer.with(order: @order).order_completed.deliver_later
+      OrderMailer.with(user: @user).order.deliver_later
       redirect_to root_path
     else
       @item = Item.find(params[:item_id])
