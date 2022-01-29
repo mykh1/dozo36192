@@ -4,8 +4,9 @@ class OrdersController < ApplicationController
     @order = current_user.orders.build(order_params)
 
     if @order.save
-      OrderCompletedMailer.with(order: @order).order_completed.deliver_later
       OrderMailer.with(order: @order).order.deliver_later
+      OrderCompletedMailer.with(order: @order).order_completed.deliver_later
+
       redirect_to root_path
     else
       @item = Item.find(params[:item_id])
